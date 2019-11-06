@@ -2,12 +2,13 @@
 
 {% block content %}
     <div class="post">
-        {% if post.created_date %}
-            <p class="date">Создано: {{ post.created_date }}</p>
-        {% endif %}
+{#        {% if post.created_date %}#}
+{#            <p class="date">Создано: {{ post.created_date }}</p>#}
+{#        {% endif %}#}
         {% if post.published_date %}
             <p class="date">Опубликовано: {{ post.published_date }}</p>
         {% else %}
+            <p class="date">Создано: {{ post.created_date }}</p>
             <a class="btn btn-primary" href="{% url 'post_publish' pk=post.pk %}"><span
                     class="glyphicon glyphicon-send"></span></a>
         {% endif %}
