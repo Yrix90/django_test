@@ -2,9 +2,6 @@
 
 {% block content %}
     <div class="post">
-{#        {% if post.created_date %}#}
-{#            <p class="date">Создано: {{ post.created_date }}</p>#}
-{#        {% endif %}#}
         {% if post.published_date %}
             <p class="date">Опубликовано: {{ post.published_date }}</p>
         {% else %}
