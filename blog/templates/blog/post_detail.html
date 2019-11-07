@@ -1,11 +1,11 @@
 {% extends 'blog/base.html' %}
 
 {% block content %}
-    <div class="post">
+    <div class="post"><span class="date">
         {% if post.published_date %}
-            <p class="date">Опубликовано: {{ post.published_date }}</p>
+            Опубликовано: {{ post.published_date }}
         {% else %}
-            <p class="date">Создано: {{ post.created_date }}</p>
+            Автор: {{ post.author }} | Создано: {{ post.created_date }}
             <a class="btn btn-primary" href="{% url 'post_publish' pk=post.pk %}"><span
                     class="glyphicon glyphicon-send"></span></a>
         {% endif %}
@@ -15,6 +15,7 @@
             <a class="btn btn-danger" href="{% url 'post_remove' pk=post.pk %}"><span
                     class="glyphicon glyphicon-remove"></span></a>
         {% endif %}
+    </span>
         <h1>{{ post.title }}</h1>
         <p>{{ post.text|linebreaksbr }}</p>
     </div>
