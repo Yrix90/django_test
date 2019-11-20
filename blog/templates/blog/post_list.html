@@ -8,7 +8,7 @@
             </div>
             <h1><a href="{% url 'post_detail' pk=i_post.pk %}">{{ i_post.title }}</a></h1>
             <p>{{ i_post.text|linebreaksbr }}</p>
-        <a href="{% url 'post_detail' pk=i_post.pk %}">Комментарии:{{ i_post.comments.count }}</a>
+        <span class="glyphicon glyphicon-comment"></span> <a href="{% url 'post_detail' pk=i_post.pk %}">{{ i_post.approved_comments.count }}</a>
         </div>
     {% endfor %}
 {% endblock %}
