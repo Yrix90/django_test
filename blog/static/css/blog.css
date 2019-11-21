@@ -56,3 +56,7 @@ h1, h2, h3, h4 {
 .col-md-8 {
     margin: 0 15%;
 }
+
+.link-line:hover {
+    text-decoration: none;
+}
