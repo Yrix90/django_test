@@ -20,7 +20,16 @@
         <p>{{ post.text|linebreaksbr }}</p>
     </div>
     <hr>
+    <h4>Добавить комментарий</h4>
+    <form method="POST" class="post-from">{% csrf_token %} {# защита от атак CSRF#}
+        <div>
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-primary" > Отправить комментарий </button>
+        </div>
+    </form>
+    <br>
     <a class="btn btn-primary" href="{% url 'add_comment_to_post' pk=post.pk %}">Добавить комментарий</a><br>
+    <hr>
     {% for comment in post.comments.all  %}
         {% if user.is_authenticated or comment.approved_comment %}
         <div class="comment">

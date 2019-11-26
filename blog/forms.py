@@ -16,3 +16,11 @@ class CommentForm(forms.ModelForm):
     class Meta:
         model = Comment
         fields = ('author', 'text',)
+
+
+class CommentInput(forms.ModelForm):
+    """Класс для ввода комментариев под постом"""
+
+    class Meta:
+        model = Comment
+        fields = ('text',)
