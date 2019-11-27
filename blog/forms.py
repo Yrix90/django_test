@@ -16,6 +16,7 @@ class CommentForm(forms.ModelForm):
     class Meta:
         model = Comment
         fields = ('author', 'text',)
+        labels = {'text': 'Введите ваш коментарий', 'author': 'Автор'}
 
 
 class CommentInput(forms.ModelForm):
@@ -24,4 +25,4 @@ class CommentInput(forms.ModelForm):
     class Meta:
         model = Comment
         fields = ('text',)
-        label = {'text': 'Введите Ваш комментарий'}
+        labels = {'text': 'Введите Ваш комментарий'}
