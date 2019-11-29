@@ -85,6 +85,13 @@ def comment_add_post(request, pk):
             return redirect('post_detail', pk=post.pk)
     else:
         form = CommentForm()
-    return redirect('post_detail', pk=post.pk)
-        #(request, 'blog/post_detail.html', {'form': form})
-    # Create your views here.
+    return redirect('post_detail', {'form': form})
+    # (request, 'blog/post_detail.html', {'form': form})
+
+
+def stock_plus(request, pk):
+    stock = get_object_or_404(Post, pk=pk)
+    stock.stock_plus()
+    return redirect('post_list', pk=pk)
+
+# Create your views here.

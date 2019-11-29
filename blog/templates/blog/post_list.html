@@ -8,7 +8,15 @@
             </div>
             <h1><a href="{% url 'post_detail' pk=i_post.pk %}">{{ i_post.title }}</a></h1>
             <p>{{ i_post.text|linebreaksbr }}</p>
+            <!-- Рейтинг статьи -->
+            <div class="date">
+                <a class="link-line" href="{% url 'stock_plus' pk=i_post.pk %}"><span class="glyphicon glyphicon-chevron-up"></span></a>
+                {{ i_post.stock }}
+                <a class="link-line" href="{{ i_post.stock_plus }}"><span class="glyphicon glyphicon-chevron-down"></span></a>
+            </div>
+            <!--  -->
             <a class="link-line" href="{% url 'post_detail' pk=i_post.pk %}"><span class="glyphicon glyphicon-comment"></span> {{ i_post.approved_comments.count }}</a>
+
         </div>
     {% endfor %}
 {% endblock %}

@@ -9,6 +9,7 @@ class Post(models.Model):
     text = models.TextField()
     created_date = models.DateTimeField(default=timezone.now)
     published_date = models.DateTimeField(blank=True, null=True)
+    stock = models.IntegerField(default=0)
 
     def publish(self):
         self.published_date = timezone.now()
@@ -19,6 +20,14 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
+
+    def stock_plus(self):
+        self.stock += 1
+        return self.stock
+
+    def stock_minus(self):
+        self.stock -= 1
+        return self.stock
 
 
 class Comment(models.Model):
