@@ -4,6 +4,10 @@
     padding: 50px 20px 20px 40px;
 }
 
+body {
+    background-color: #f4f4f4;
+}
+
 .page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
     color: #ffffff;
     font-size: 36pt;
@@ -27,7 +31,7 @@ h1, h2, h3, h4 {
 }
 
 .post-from textarea, .post-from input {
-    width: 100%;
+    width: 50%;
 }
 
 .top-menu, .top-menu:hover, .top-menu:visited {
@@ -37,12 +41,14 @@ h1, h2, h3, h4 {
     margin-right: 20px;
 }
 
-.post {
-    margin-bottom: 70px;
+.post, .comment {
+    /*margin-bottom: 20px;*/
+    background-color: #ffffff;
+    padding: 10px 10px 15px 25px;
 }
 
 .post h1 a, .post h1 a:visited {
-    color: #000000;
+    color: #757575;
 }
 
 .btn {
@@ -53,10 +59,21 @@ h1, h2, h3, h4 {
     margin: 20px 0px 20px 20px;
 }
 
-.col-md-8 {
+.col-md-6 {
     margin: 0 15%;
 }
 
-.link-line:hover {
+.link-line:hover, .link-line {
     text-decoration: none;
+    color: #bdbdbf;
+}
+
+.post-footer {
+    margin-bottom: 20px;
+    background-color: #f9f9fb;
+    padding: 15px 10px 15px 30px;
+}
+
+.link-author {
+    float: right;
 }
